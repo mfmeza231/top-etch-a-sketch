@@ -1,5 +1,5 @@
 //Global Scope
-const container = document.getElementById("container");
+const container = document.getElementById("grid-container");
 
 //Create the Grid
 function makeGrid(rows, cols) {
@@ -10,6 +10,7 @@ function makeGrid(rows, cols) {
         let cell = document.createElement('div');
         //adds text within each cell created
             //cell.innerText = (c+1);
+        //gives class name of "grid-item" to the cell
         container.appendChild(cell).className = "grid-item";
     };
 };

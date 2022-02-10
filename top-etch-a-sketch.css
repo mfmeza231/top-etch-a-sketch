@@ -3,15 +3,25 @@
     --grid-rows: 1;
   }
   
-  #container {
+  /* # are specific to choosing a div id vs a . which chooses a grid class */
+  #grid-container {
     display: grid;
-    grid-gap: 0px;
+    /*grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);*/
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
+    height: 660px;
+    width: 660px;
   }
   
   .grid-item {
-    padding: 1em;
+    padding: 1px;
     border: 1px solid #ddd;
     text-align: center;
   }
+
+.grid-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
