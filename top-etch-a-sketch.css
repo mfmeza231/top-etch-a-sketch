@@ -19,8 +19,21 @@
   /* defines the boxes of the grid with border */
   .grid-item {
     padding: 1px;
-    border: 1px solid #ddd;
+    border: 1px solid;
+    border-color: #d3d3d3;
     text-align: center;
+  }
+
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition:ease-in;
+    background-color: black;
+  }
+
+  .grid-item:hover {
+    background-color: #71BC68;
   }
 
 /* situate the grid within a div element to move in flexbox */  
