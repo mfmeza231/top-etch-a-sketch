@@ -6,20 +6,24 @@
   /* # are specific to choosing a div id vs a . which chooses a grid class */
   #grid-container {
     display: grid;
-    /*grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);*/
+
+    /* populate rows and columns of the page with div elements */
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    height: 660px;
-    width: 660px;
+    
+    /* define the borders of the grid */
+    height: 500px;
+    width: 500px;
   }
   
+  /* defines the boxes of the grid with border */
   .grid-item {
     padding: 1px;
     border: 1px solid #ddd;
     text-align: center;
   }
 
+/* situate the grid within a div element to move in flexbox */  
 .grid-wrapper {
   display: flex;
   justify-content: center;
