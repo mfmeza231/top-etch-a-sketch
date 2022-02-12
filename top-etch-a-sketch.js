@@ -1,5 +1,6 @@
 //Global Scope
 const container = document.getElementById("grid-container");
+const cell = document.getElementsByClassName("grid-item");
 
 //Create the Grid
 function makeGrid(rows, cols) {
@@ -16,4 +17,12 @@ function makeGrid(rows, cols) {
 };
 
 //Execute function to create grid
+//Use before EventListeners as it will need to be set up before any action can take place
 makeGrid(16, 16);
+
+//cell is an array of divs, loop through each div element will allow EventListener to work
+for (let i = 0; i < cell.length; i++) {
+    cell[i].addEventListener('click', () => {
+        console.log("change color");
+    })
+}
