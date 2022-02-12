@@ -21,9 +21,17 @@ function makeGrid(rows, cols) {
 //Use before EventListeners as it will need to be set up before any action can take place
 makeGrid(16, 16);
 
+//Shading cells with click
 //cell is an array of divs, loop through each div element will allow EventListener to work
 for (let i = 0; i < cell.length; i++) {
     cell[i].addEventListener('click', () => {
         cell[i].style.background = 'black';
     })
 }
+
+//Reset Grid
+resetBtn.addEventListener('click', () => {
+    for (let i = 0; i < cell.length; i++) {
+        cell[i].style.background = 'white';
+    }
+})
