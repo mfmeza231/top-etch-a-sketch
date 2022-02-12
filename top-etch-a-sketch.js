@@ -32,6 +32,6 @@ for (let i = 0; i < cell.length; i++) {
 //Reset Grid
 resetBtn.addEventListener('click', () => {
     for (let i = 0; i < cell.length; i++) {
-        cell[i].style.background = 'white';
+        cell[i].style.background = '';
     }
 })
