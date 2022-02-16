@@ -1,7 +1,8 @@
 //Global Scope
 const container = document.getElementById("grid-container");
 const cell = document.getElementsByClassName("grid-item");
-const resetBtn_button = document.getElementById('reset-btn')
+const resetBtn_button = document.getElementById('reset-btn');
+let isDrawing = false;
 
 //Create the Grid
 function makeGrid(rows, cols) {
@@ -22,27 +23,30 @@ function makeGrid(rows, cols) {
 makeGrid(24, 24);
 
 //Shading cells with click
-//cell is an array of divs, loop through each div element will allow EventListener to work
+//Cell is an array of divs, loop through each div element will allow EventListener to work
+//Initiates the drawing function
 for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('click', () => {
-        cell[i].style.background = 'black';
+    cell[i].addEventListener('mousedown', () => {
+        isDrawing = true;
+        console.log('is Drawing');
     }) 
+}
+
+//Continues to draw while mouse is pressed down
+for (let i = 0; i < cell.length; i++) {
     cell[i].addEventListener('mousemove', () => {
-        cell[i].style.background = 'black';
-    })
-}    
+        if (isDrawing == true) {
+            cell[i].style.background = 'black'; 
+        }
+    })    
+}
 
-//startDraw();
-
-//cell[i].addEventListener('mousedown', () => {
-    //cell[i].style.background = 'black';
-//})
-//cell[i].addEventListener('mousemove', () => {
-    //cell[i].style.background = 'black';
-//})
-//cell[i].addEventListener('mouseup', () => {
-    //;
-//})
+//Exits drawing when mouse is let go
+for (let i = 0; i < cell.length; i++) {
+    cell[i].addEventListener('mouseup', () => {
+        isDrawing = false;
+    }) 
+}
 
 //Reset Grid
 resetBtn_button.addEventListener('click', () => {
