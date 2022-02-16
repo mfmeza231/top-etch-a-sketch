@@ -2,6 +2,7 @@
 const container = document.getElementById("grid-container");
 const cell = document.getElementsByClassName("grid-item");
 const resetBtn = document.getElementById('reset-btn')
+let i = 0;
 
 //Create the Grid
 function makeGrid(rows, cols) {
@@ -23,11 +24,27 @@ makeGrid(16, 16);
 
 //Shading cells with click
 //cell is an array of divs, loop through each div element will allow EventListener to work
-for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('click', () => {
-        cell[i].style.background = 'black';
-    })
-}
+function startDraw() {
+    for (let i = 0; i < cell.length; i++) {
+        cell[i].addEventListener('click', () => {
+            cell[i].style.background = 'black';
+    }) 
+}}
+
+startDraw();
+
+
+
+
+//cell[i].addEventListener('mousedown', () => {
+    //cell[i].style.background = 'black';
+//})
+//cell[i].addEventListener('mousemove', () => {
+    //cell[i].style.background = 'black';
+//})
+//cell[i].addEventListener('mouseup', () => {
+    //;
+//})
 
 //Reset Grid
 resetBtn.addEventListener('click', () => {
