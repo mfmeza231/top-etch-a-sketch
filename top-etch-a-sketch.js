@@ -32,6 +32,13 @@ for (let i = 0; i < cell.length; i++) {
     }) 
 }
 
+//Draws in with one click
+for (let i = 0; i < cell.length; i++) {
+    cell[i].addEventListener('click', () => {
+        cell[i].style.background = 'black';
+    }) 
+}
+
 //Continues to draw while mouse is pressed down
 for (let i = 0; i < cell.length; i++) {
     cell[i].addEventListener('mousemove', () => {
