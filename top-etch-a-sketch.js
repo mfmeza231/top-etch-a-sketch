@@ -1,8 +1,7 @@
 //Global Scope
 const container = document.getElementById("grid-container");
 const cell = document.getElementsByClassName("grid-item");
-const resetBtn = document.getElementById('reset-btn')
-let i = 0;
+const resetBtn_button = document.getElementById('reset-btn')
 
 //Create the Grid
 function makeGrid(rows, cols) {
@@ -20,21 +19,20 @@ function makeGrid(rows, cols) {
 
 //Execute function to create grid
 //Use before EventListeners as it will need to be set up before any action can take place
-makeGrid(16, 16);
+makeGrid(24, 24);
 
 //Shading cells with click
 //cell is an array of divs, loop through each div element will allow EventListener to work
-function startDraw() {
-    for (let i = 0; i < cell.length; i++) {
-        cell[i].addEventListener('click', () => {
-            cell[i].style.background = 'black';
+for (let i = 0; i < cell.length; i++) {
+    cell[i].addEventListener('click', () => {
+        cell[i].style.background = 'black';
     }) 
-}}
+    cell[i].addEventListener('mousemove', () => {
+        cell[i].style.background = 'black';
+    })
+}    
 
-startDraw();
-
-
-
+//startDraw();
 
 //cell[i].addEventListener('mousedown', () => {
     //cell[i].style.background = 'black';
@@ -47,7 +45,7 @@ startDraw();
 //})
 
 //Reset Grid
-resetBtn.addEventListener('click', () => {
+resetBtn_button.addEventListener('click', () => {
     for (let i = 0; i < cell.length; i++) {
         cell[i].style.background = '';
     }
