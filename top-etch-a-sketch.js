@@ -3,7 +3,7 @@ const container = document.getElementById("grid-container");
 const cell = document.getElementsByClassName("grid-item");
 const resetBtn_button = document.getElementById('reset-btn');
 const gridSlider_div = document.getElementById('sliderRange');
-const gridSize_span = document.getElementById('gridSize');
+const gridSize_span = document.getElementById('grid-size');
 let isDrawing = false;
 
 //Create the Grid
@@ -22,16 +22,16 @@ function makeGrid(rows, cols) {
 
 //Assigning slider position value to gridSize text value
 gridSize_span.innerHTML = gridSlider_div.value;
-
 gridSlider_div.oninput = function() {
-    gridSize_span.innerHTML = this.value;
+    gridSize_span.innerHTML = this.value; 
 }
 
-let rowCols = gridSize_span.innerHTML;
+//Slider Value
+let gridParameter = gridSize_span.innerText;
 
 //Execute function to create grid
 //Use before EventListeners as it will need to be set up before any action can take place
-makeGrid(rowCols, rowCols);
+makeGrid(25, 25);
 
 //Shading cells with click
 //Cell is an array of divs, loop through each div element will allow EventListener to work
