@@ -33,7 +33,7 @@
   }
 
   .grid-item:hover {
-    background-color: #71BC68;
+    background-color: black;
   }
 
 /* situate the grid within a div element to move in flexbox */  
