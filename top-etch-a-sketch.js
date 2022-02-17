@@ -27,11 +27,11 @@ gridSlider_div.oninput = function() {
     gridSize_span.innerHTML = this.value;
 }
 
-let rowCols = gridSlider_div.oninput
+let rowCols = gridSize_span.innerHTML;
 
 //Execute function to create grid
 //Use before EventListeners as it will need to be set up before any action can take place
-makeGrid(24, 24);
+makeGrid(rowCols, rowCols);
 
 //Shading cells with click
 //Cell is an array of divs, loop through each div element will allow EventListener to work
