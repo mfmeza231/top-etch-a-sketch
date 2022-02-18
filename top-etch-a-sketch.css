@@ -36,6 +36,11 @@
     background-color: black;
   }
 
+#rgb-btn {
+  width: 125px;
+  text-align: center;
+}
+
 /* situate the grid within a div element to move in flexbox */  
 .grid-wrapper {
   display: flex;
