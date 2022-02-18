@@ -2,6 +2,7 @@
 const container = document.getElementById("grid-container");
 const cell = document.getElementsByClassName("grid-item");
 const resetBtn_button = document.getElementById('reset-btn');
+const rgbBtn_button = document.getElementById('rgb-btn');
 const gridSlider_div = document.getElementById('sliderRange');
 const gridSize_span = document.getElementById('grid-size');
 let isDrawing = false;
