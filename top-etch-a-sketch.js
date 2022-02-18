@@ -34,6 +34,34 @@ let gridParameter = gridSize_span.innerText;
 //Use before EventListeners as it will need to be set up before any action can take place
 makeGrid(25, 25);
 
+//Toggle Name of RGB Button
+rgbBtn_button.addEventListener("click", () => {
+
+    if(rgbBtn_button.innerText === "RGB"){
+        rgbBtn_button.innerText = "MONOCHROME";
+    } else {
+        rgbBtn_button.innerText = "RGB";
+    }
+})
+
+function rgbToggle() {
+    let btnName = document.getElementById("rgb-btn");
+    if (btnName.style.innerText === "RGB") {
+        btnName.style.innerText = "Black and White"
+    } else {
+        btnName.style.display = "RGB";
+    }
+}
+
+//Toggle RGB
+function randomRGB() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let rgbColor = "rgb(" + r + "," + g + "," + b + ")";
+    console.log(rgbColor);
+}
+
 //Shading cells with click
 //Cell is an array of divs, loop through each div element will allow EventListener to work
 //Initiates the drawing function
