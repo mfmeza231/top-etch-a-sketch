@@ -34,6 +34,16 @@ let gridParameter = gridSize_span.innerText;
 //Use before EventListeners as it will need to be set up before any action can take place
 makeGrid(25, 25);
 
+//Toggle RGB
+function randomRGB() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    //Calls out randome RGB value
+    let ranColor = "rgb(" + r + "," + g + "," + b + ")";
+    return ranColor;
+}
+
 //Toggle Name of RGB Button
 rgbBtn_button.addEventListener("click", () => {
 
@@ -43,24 +53,6 @@ rgbBtn_button.addEventListener("click", () => {
         rgbBtn_button.innerText = "RGB";
     }
 })
-
-function rgbToggle() {
-    let btnName = document.getElementById("rgb-btn");
-    if (btnName.style.innerText === "RGB") {
-        btnName.style.innerText = "Black and White"
-    } else {
-        btnName.style.display = "RGB";
-    }
-}
-
-//Toggle RGB
-function randomRGB() {
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
-    let rgbColor = "rgb(" + r + "," + g + "," + b + ")";
-    console.log(rgbColor);
-}
 
 //Shading cells with click
 //Cell is an array of divs, loop through each div element will allow EventListener to work
@@ -83,6 +75,32 @@ for (let i = 0; i < cell.length; i++) {
     cell[i].addEventListener('mousemove', () => {
         if (isDrawing == true) {
             cell[i].style.background = 'black'; 
+        }
+    })    
+}
+
+//Draws in with one click - Random RGB Test Trial
+for (let i = 0; i < cell.length; i++) {
+    cell[i].addEventListener('click', () => {
+        if (rgbBtn_button.innerText === "RGB"){
+            let rgbColor = randomRGB();
+            cell[i].style.background = rgbColor;
+        } else {
+            cell[i].style.background = 'black';
+        }
+    }) 
+}
+
+//Continues to draw while mouse is pressed down
+for (let i = 0; i < cell.length; i++) {
+    cell[i].addEventListener('mousemove', () => {
+        if (isDrawing == true) {
+            if (rgbBtn_button.innerText === "RGB"){
+                let rgbColor = randomRGB();
+                cell[i].style.background = rgbColor;
+            } else {
+                cell[i].style.background = 'black';
+            } 
         }
     })    
 }
