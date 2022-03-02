@@ -3,7 +3,6 @@ const container = document.getElementById("grid-container");
 const cell = document.getElementsByClassName("grid-item");
 const resetBtn_button = document.getElementById('reset-btn');
 const rgbBtn_button = document.getElementById('rgb-btn');
-const gridSlider_div = document.getElementById('sliderRange');
 const gridSize_span = document.getElementById('grid-size');
 let isDrawing = false;
 
@@ -21,15 +20,6 @@ function makeGrid(rows, cols) {
     };
 };
 
-//Assigning slider position value to gridSize text value
-gridSize_span.innerHTML = gridSlider_div.value;
-gridSlider_div.oninput = function() {
-    gridSize_span.innerHTML = this.value; 
-}
-
-//Slider Value
-let gridParameter = gridSize_span.innerText;
-
 //Execute function to create grid
 //Use before EventListeners as it will need to be set up before any action can take place
 makeGrid(25, 25);
@@ -39,7 +29,7 @@ function randomRGB() {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
-    //Calls out randome RGB value
+    //Calls out random RGB value
     let ranColor = "rgb(" + r + "," + g + "," + b + ")";
     return ranColor;
 }
@@ -47,10 +37,10 @@ function randomRGB() {
 //Toggle Name of RGB Button
 rgbBtn_button.addEventListener("click", () => {
 
-    if(rgbBtn_button.innerText === "RGB"){
-        rgbBtn_button.innerText = "MONOCHROME";
-    } else {
+    if(rgbBtn_button.innerText === "MONOCHROME"){
         rgbBtn_button.innerText = "RGB";
+    } else {
+        rgbBtn_button.innerText = "MONOCHROME";
     }
 })
 
