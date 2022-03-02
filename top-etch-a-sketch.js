@@ -3,6 +3,9 @@ const container = document.getElementById("grid-container");
 const cell = document.getElementsByClassName("grid-item");
 const resetBtn_button = document.getElementById('reset-btn');
 const rgbBtn_button = document.getElementById('rgb-btn');
+const gridSmall_button = document.getElementById('grid-small');
+const gridMedium_button = document.getElementById('grid-medium');
+const gridLarge_button = document.getElementById('grid-large');
 const gridSize_span = document.getElementById('grid-size');
 let isDrawing = false;
 
@@ -22,7 +25,18 @@ function makeGrid(rows, cols) {
 
 //Execute function to create grid
 //Use before EventListeners as it will need to be set up before any action can take place
-makeGrid(25, 25);
+makeGrid(20, 20);
+
+//Altering Grid Size
+gridSmall_button.addEventListener("click", () => {
+    makeGrid(10, 10);
+})
+gridMedium_button.addEventListener("click", () => {
+    makeGrid(20, 20);
+})
+gridLarge_button.addEventListener("click", () => {
+    makeGrid(40, 40);
+})
 
 //Toggle RGB
 function randomRGB() {
