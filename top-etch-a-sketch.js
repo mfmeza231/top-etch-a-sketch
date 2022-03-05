@@ -29,12 +29,24 @@ makeGrid(20, 20);
 
 //Altering Grid Size
 gridSmall_button.addEventListener("click", () => {
+    function clearcontent(container) {
+        container.innerHTML = "";
+    }
+    clearcontent(container);
     makeGrid(10, 10);
 })
 gridMedium_button.addEventListener("click", () => {
+    function clearcontent(container) {
+        container.innerHTML = "";
+    }
+    clearcontent(container);
     makeGrid(20, 20);
 })
 gridLarge_button.addEventListener("click", () => {
+    function clearcontent(container) {
+        container.innerHTML = "";
+    }
+    clearcontent(container);
     makeGrid(40, 40);
 })
 
