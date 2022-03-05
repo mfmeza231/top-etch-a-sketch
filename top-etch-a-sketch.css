@@ -36,6 +36,16 @@
     background-color: black;
   }
 
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.option-btns {
+  display: flex;
+  justify-content: center;
+}
+
 #rgb-btn {
   width: 125px;
   text-align: center;
@@ -46,4 +56,5 @@
   display: flex;
   justify-content: center;
   margin: 100px;
+  margin-bottom: 25px;
 }

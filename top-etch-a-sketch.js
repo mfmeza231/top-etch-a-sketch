@@ -60,7 +60,7 @@ gridLarge_button.addEventListener("click", () => {
         container.innerHTML = "";
     }
     clearcontent(container);
-    makeGrid(40, 40);
+    makeGrid(30, 30);
     drawMouseDn();
     drawOneClick();
     drawMouseMove();
