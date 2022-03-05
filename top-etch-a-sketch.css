@@ -39,14 +39,36 @@
 .header {
   display: flex;
   justify-content: center;
+  margin: 36px;
+  font-family: 'Montserrat', sans-serif;
 }
 
+/* Button Displays */
 .option-btns {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.action-btn {
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.action-btn:hover {
+  background-color: #0080FF;
+  color: white;
+  transition-duration: .25s;
 }
 
 #rgb-btn {
+  font-family: 'Montserrat', sans-serif;
   width: 125px;
   text-align: center;
 }
@@ -55,6 +77,5 @@
 .grid-wrapper {
   display: flex;
   justify-content: center;
-  margin: 100px;
-  margin-bottom: 25px;
+  margin: 36px;
 }
