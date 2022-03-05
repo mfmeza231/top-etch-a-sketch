@@ -12,8 +12,8 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     
     /* define the borders of the grid */
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
   }
   
   /* defines the boxes of the grid with border */
