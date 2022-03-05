@@ -80,10 +80,10 @@ function randomRGB() {
 //Toggle Name of RGB Button
 rgbBtn_button.addEventListener("click", () => {
 
-    if(rgbBtn_button.innerText === "MONOCHROME"){
-        rgbBtn_button.innerText = "RGB";
+    if(rgbBtn_button.innerText === "BLACK / WHITE"){
+        rgbBtn_button.innerText = "RANDOM";
     } else {
-        rgbBtn_button.innerText = "MONOCHROME";
+        rgbBtn_button.innerText = "BLACK / WHITE";
     }
 })
 
@@ -103,7 +103,7 @@ function drawOneClick() {
 for (let i = 0; i < cell.length; i++) {
         cell[i].addEventListener('click', () => {
             //Condition for which RGB will be turned on
-            if (rgbBtn_button.innerText === "RGB"){
+            if (rgbBtn_button.innerText === "RANDOM"){
                 //Define rgbColor from the rgb generator function
                 let rgbColor = randomRGB();
                 cell[i].style.background = rgbColor;
@@ -119,7 +119,7 @@ function drawMouseMove() {
 for (let i = 0; i < cell.length; i++) {
         cell[i].addEventListener('mousemove', () => {
             if (isDrawing == true) {
-                if (rgbBtn_button.innerText === "RGB"){
+                if (rgbBtn_button.innerText === "RANDOM"){
                     let rgbColor = randomRGB();
                     cell[i].style.background = rgbColor;
                 } else {

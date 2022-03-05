@@ -21,7 +21,7 @@
     padding: 1px;
     border: 1px solid;
     border-color: #d3d3d3;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .overlay {
@@ -58,7 +58,7 @@
   border-color: black;
   border-width: 1px;
   border-radius: 3px;
-  padding: 15px;
+  padding: 10px;
 }
 
 .action-btn:hover {
