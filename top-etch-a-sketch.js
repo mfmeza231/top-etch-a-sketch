@@ -20,7 +20,11 @@ function makeGrid(rows, cols) {
             //cell.innerText = (c+1);
         //gives class name of "grid-item" to the cell
         container.appendChild(cell).className = "grid-item";
-    };
+    }
+    drawMouseDn();
+    drawOneClick();
+    drawMouseMove();
+    drawMouseUp();
 };
 
 //Execute function to create grid
@@ -38,6 +42,7 @@ gridSmall_button.addEventListener("click", () => {
     drawMouseDn();
     drawOneClick();
     drawMouseMove();
+    drawMouseUp();
 })
 gridMedium_button.addEventListener("click", () => {
     function clearcontent(container) {
@@ -48,6 +53,7 @@ gridMedium_button.addEventListener("click", () => {
     drawMouseDn();
     drawOneClick();
     drawMouseMove();
+    drawMouseUp();
 })
 gridLarge_button.addEventListener("click", () => {
     function clearcontent(container) {
@@ -58,6 +64,7 @@ gridLarge_button.addEventListener("click", () => {
     drawMouseDn();
     drawOneClick();
     drawMouseMove();
+    drawMouseUp();
 })
 
 //Toggle RGB
@@ -124,10 +131,12 @@ for (let i = 0; i < cell.length; i++) {
 }
 
 //Exits drawing when mouse is let go
-for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('mouseup', () => {
-        isDrawing = false;
-    }) 
+function drawMouseUp() {
+    for (let i = 0; i < cell.length; i++) {
+        cell[i].addEventListener('mouseup', () => {
+            isDrawing = false;
+        }) 
+    }
 }
 
 //Reset Grid
