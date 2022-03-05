@@ -29,11 +29,15 @@ makeGrid(20, 20);
 
 //Altering Grid Size
 gridSmall_button.addEventListener("click", () => {
-    function clearcontent(container) {
+    //Resets the div to erase the existing grid first
+    function clearcontent() {
         container.innerHTML = "";
     }
-    clearcontent(container);
+    clearcontent();
     makeGrid(10, 10);
+    drawMouseDn();
+    drawOneClick();
+    drawMouseMove();
 })
 gridMedium_button.addEventListener("click", () => {
     function clearcontent(container) {
@@ -41,6 +45,9 @@ gridMedium_button.addEventListener("click", () => {
     }
     clearcontent(container);
     makeGrid(20, 20);
+    drawMouseDn();
+    drawOneClick();
+    drawMouseMove();
 })
 gridLarge_button.addEventListener("click", () => {
     function clearcontent(container) {
@@ -48,6 +55,9 @@ gridLarge_button.addEventListener("click", () => {
     }
     clearcontent(container);
     makeGrid(40, 40);
+    drawMouseDn();
+    drawOneClick();
+    drawMouseMove();
 })
 
 //Toggle RGB
@@ -73,38 +83,44 @@ rgbBtn_button.addEventListener("click", () => {
 //Shading cells with click
 //Cell is an array of divs, loop through each div element will allow EventListener to work
 //Initiates the drawing function
-for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('mousedown', () => {
-        isDrawing = true;
-    }) 
+function drawMouseDn() {
+    for (let i = 0; i < cell.length; i++) {
+        cell[i].addEventListener('mousedown', () => {
+            isDrawing = true;
+        }) 
+    }
 }
 
 //Draws in with one click
+function drawOneClick() {
 for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('click', () => {
-        //Condition for which RGB will be turned on
-        if (rgbBtn_button.innerText === "RGB"){
-            //Define rgbColor from the rgb generator function
-            let rgbColor = randomRGB();
-            cell[i].style.background = rgbColor;
-        } else {
-            cell[i].style.background = 'black';
-        }
-    }) 
-}
-
-//Continues to draw while mouse is pressed down
-for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('mousemove', () => {
-        if (isDrawing == true) {
+        cell[i].addEventListener('click', () => {
+            //Condition for which RGB will be turned on
             if (rgbBtn_button.innerText === "RGB"){
+                //Define rgbColor from the rgb generator function
                 let rgbColor = randomRGB();
                 cell[i].style.background = rgbColor;
             } else {
                 cell[i].style.background = 'black';
-            } 
-        }
-    })    
+            }
+        }) 
+    }
+}
+
+//Continues to draw while mouse is pressed down
+function drawMouseMove() {
+for (let i = 0; i < cell.length; i++) {
+        cell[i].addEventListener('mousemove', () => {
+            if (isDrawing == true) {
+                if (rgbBtn_button.innerText === "RGB"){
+                    let rgbColor = randomRGB();
+                    cell[i].style.background = rgbColor;
+                } else {
+                    cell[i].style.background = 'black';
+                } 
+            }
+        })    
+    }
 }
 
 //Exits drawing when mouse is let go
