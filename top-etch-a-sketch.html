@@ -8,11 +8,11 @@
     <script src="top-etch-a-sketch.js" defer></script>
     <title>Etch-a-Sketch</title>
 </head>
-<body>
+<body class="document">
     <h1 class="header">
         ETCH-A-SKETCH
     </h1>
-    <div class="option-btns">
+    <div class="option-btns-above">
         <button class="action-btn", id="grid-small">
             SMALL
         </button>
@@ -22,16 +22,18 @@
         <button class="action-btn", id="grid-large">
             LARGE
         </button>
+    </div>
+    <div class="grid-wrapper">
+        <div id="grid-container">
+        </div>
+    </div>
+    <div class="option-btns-below">
         <button class="action-btn", id="reset-btn">
             RESET
         </button>
         <button class="action-btn", id="rgb-btn">
             BLACK / WHITE
         </button>
-    </div>
-    <div class="grid-wrapper">
-        <div id="grid-container">
-        </div>
     </div>
 </body>
 </html>
